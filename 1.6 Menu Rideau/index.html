@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu rideau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="myNav" class="overlay">
+        <a href="#" onclick="closeNav()" class="closeBtn">&times;</a>
+
+        <div class="overlay-content">
+            <a href="#">A Propos</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <span onclick="openNav()">Menu</span>
+
+    <script>
+    function openNav(){
+        document.getElementById("myNav").style.width = '100%';
+    }
+    function closeNav(){
+        document.getElementById("myNav").style.width = '0%';
+    }
+    </script>
+</body>
+</html>

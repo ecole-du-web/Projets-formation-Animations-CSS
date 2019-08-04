@@ -1,0 +1,49 @@
+span {
+    display: block;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    margin-left: 50px;
+    cursor: pointer;
+    background: aliceblue;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+.overlay {
+    height:100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    background: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover {
+    color: #f1f1f1;
+}
+
+.overlay .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
