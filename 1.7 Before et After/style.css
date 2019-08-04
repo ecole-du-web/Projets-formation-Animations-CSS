@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #4e4e50;
+}
+
+.centre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.btn {
+    position: relative;
+    color: white;
+    display: block;
+    font-size: 100px;
+    font-family: sans-serif;
+    text-decoration: none;
+    margin: 30px 0;
+    border: 2px solid #45a29e;
+    padding: 80px 60px;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.btn::after {
+    content: '';
+    background: #45a29e;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(25deg);
+    z-index: -1;
+    transition: all 0.6s;
+    width: 120%;
+    height: 0%;
+}
+
+.btn:hover::after {
+    height: 180%;
+}
