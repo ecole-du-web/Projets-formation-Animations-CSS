@@ -1,27 +1,53 @@
-
 *{
-    margin: 0;
-    padding: 0;
-  }
-  body{
-    background: rgb(218, 73, 48);
-  }
-  
-  .carte{
-    cursor: pointer;
-    width: 340px;
-    height: 480px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: rgb(218, 73, 48);
+}
 
-  .devant, .derriere {
-      width: 100%;
-      height: 100%;
-      /* indique si la face cachée est visible ou non */
-      backface-visibility: hidden;
-      position: absolute;
-      transition: transform 0.6s linear;
-  }
+.carte{
+  cursor: pointer;
+  width: 340px;
+  height: 480px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.devant,.derriere{
+  width: 100%;
+  height: 100%;
+  /* indique si la face cachée doit etre visible ou non*/
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .6s linear;
+}
+.devant img{
+  height: auto;
+  width: 100%;
+}
+.devant{
+  /* distance entre l'utilisateur et l'élément, si tu mets 6 c'est collé */
+  transform: perspective(600px) rotateY(0deg);
+}
+.derriere{
+  background: #f1f1f1;
+  transform: perspective(600px) rotateY(180deg);
+}
+.contenu{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #2c3e50;
+  text-align: center;
+  width: 100%;
+}
+.carte:hover > .devant{
+  /* préciser perspective sinon il remplate par rotateY */
+  transform: perspective(600px) rotateY(-180deg);
+}
+.carte:hover > .derriere{
+  transform: perspective(600px) rotateY(0deg);
+}
